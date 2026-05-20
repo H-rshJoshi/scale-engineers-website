@@ -1,0 +1,68 @@
+<!-- ══ PAGE HERO ══ -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <p class="section-tag reveal">Our Equipment</p>
+    <h1 class="reveal">Engineered <em>Products</em><br>for Water Infrastructure</h1>
+    <div class="section-line reveal"></div>
+    <p class="reveal">Purpose-built equipment for water and wastewater treatment plants — designed in-house, built to last, and engineered for the demanding conditions of Indian infrastructure projects.</p>
+    <div class="hero-stats reveal">
+      <div class="hstat"><div class="hstat-num">6</div><div class="hstat-label">Product Lines</div></div>
+      <div class="hstat"><div class="hstat-num">170 MLD</div><div class="hstat-label">Proven at Scale</div></div>
+      <div class="hstat"><div class="hstat-num">100%</div><div class="hstat-label">In-House Engineering</div></div>
+      <div class="hstat"><div class="hstat-num">10+</div><div class="hstat-label">Years of R&amp;D</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ PRODUCTS GRID ══ -->
+<main class="products-section">
+  <p class="section-label reveal">Our Product Range</p>
+  <div class="products-grid">
+    @for (p of products; track p.id) {
+      <article class="product-card reveal">
+        <div class="product-image-wrap">
+          <img [src]="'assets/img/' + p.image" [alt]="p.name + ' — Scale Engineers product'" class="product-image" loading="lazy" (error)="onImgError($event)">
+          <div class="product-image-placeholder" style="display:none">
+            <svg viewBox="0 0 60 60" fill="none" stroke="rgba(14,165,233,.35)" stroke-width="1.2">
+              <circle cx="30" cy="30" r="22"/>
+              <circle cx="30" cy="30" r="12"/>
+              <line x1="8" y1="30" x2="52" y2="30"/>
+              <line x1="30" y1="8" x2="30" y2="52"/>
+            </svg>
+            <div class="product-image-note">Add Photo → img/{{ p.image }}</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <p class="product-tagline">{{ p.tagline }}</p>
+          <h2 class="product-name">{{ p.name }}</h2>
+          <p class="product-desc">{{ p.description }}</p>
+          <div class="product-apps">
+            <p class="product-apps-label">Applications</p>
+            <div class="product-apps-list">
+              @for (app of p.applications; track app) {
+                <span class="product-app-tag">{{ app }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</main>
+
+<!-- ══ CTA SECTION ══ -->
+<section class="products-cta reveal">
+  <div class="products-cta-inner">
+    <p class="section-tag">Custom Engineering</p>
+    <h2 class="section-title">Need a Custom Solution?</h2>
+    <div class="section-line"></div>
+    <p class="section-desc">Every project is unique. Our team designs and manufactures custom equipment tailored to your specific capacity, site, and treatment requirements. From 5 MLD to 500 MLD — we engineer for scale.</p>
+    <a href="tel:+918980008332" class="btn-primary" style="margin-top:24px">Discuss Your Requirements</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER MINI ══ -->
+<footer class="footer-mini" role="contentinfo">
+  <p>© 2025 Scale Engineers · B-503, Swati Trinity, Applewood Township, Ahmedabad – 380058 · <a href="tel:+918980008332" style="color:inherit">+91 89800 08332</a> · <a href="tel:+912717457217" style="color:inherit">+91 2717 457217</a></p>
+  <p class="footer-tagline">Engineering Water for a Better World</p>
+</footer>

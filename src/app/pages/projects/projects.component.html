@@ -1,0 +1,94 @@
+<!-- ══ PAGE HERO ══ -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <p class="section-tag reveal">Our Portfolio</p>
+    <h1 class="reveal">Landmark <em>Projects</em><br>Across India</h1>
+    <div class="section-line reveal"></div>
+    <p class="reveal">From 4.5 MLD drinking water plants in Rajasthan to 170 MLD treatment facilities in Telangana — every project is a testament to our engineering precision and commitment to clean water for all.</p>
+    <div class="hero-stats reveal">
+      <div class="hstat"><div class="hstat-num">50+</div><div class="hstat-label">Projects Delivered</div></div>
+      <div class="hstat"><div class="hstat-num">15</div><div class="hstat-label">Indian States</div></div>
+      <div class="hstat"><div class="hstat-num">170 MLD</div><div class="hstat-label">Largest Plant</div></div>
+      <div class="hstat"><div class="hstat-num">2015</div><div class="hstat-label">Year Founded</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ PHOTO GRID ══ -->
+<main class="photo-section">
+  <p class="section-label reveal">Projects with Site Photography</p>
+  <div class="photo-grid">
+    @for (p of photoProjects; track p.id) {
+      <article class="project-card reveal" [class.featured]="p.featured">
+        <img [src]="'assets/img/' + p.image" [alt]="p.title + ' — Scale Engineers'" class="project-thumb" loading="lazy" (error)="onImgError($event)">
+        <div class="project-thumb-placeholder" style="display:none">
+          <div class="pv-cap">{{ p.cap }}</div>
+          <div class="photo-badge">Add Photo → img/{{ p.image }}</div>
+        </div>
+        <div class="project-body">
+          <p class="project-category">{{ p.category }}</p>
+          <h2 class="project-title">{{ p.title }}</h2>
+          <p class="project-client">{{ p.client }}</p>
+          <p class="project-loc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            {{ p.location }}
+          </p>
+        </div>
+      </article>
+    }
+  </div>
+</main>
+
+<!-- ══ ALL OTHER PROJECTS LIST ══ -->
+<div class="list-section">
+  <div class="list-header reveal">
+    <p class="section-tag">Complete Project Record</p>
+    <h2>All Other Projects</h2>
+    <p style="font-size:13px;color:#5a7a9a;margin-top:8px">Site photography available on request for all projects below.</p>
+  </div>
+
+  <div class="category-group reveal">
+    <p class="category-title">Water Treatment Plants (WTP)</p>
+    @for (item of wtpList; track $index) {
+      <div class="pli">
+        <div>
+          <div class="pli-title">{{ item.title }}</div>
+          <div class="pli-client">{{ item.client }}</div>
+        </div>
+        <div class="pli-state">{{ item.state }}</div>
+      </div>
+    }
+  </div>
+
+  <div class="category-group reveal">
+    <p class="category-title">Sewage Treatment Plants (STP)</p>
+    @for (item of stpList; track $index) {
+      <div class="pli">
+        <div>
+          <div class="pli-title">{{ item.title }}</div>
+          <div class="pli-client">{{ item.client }}</div>
+        </div>
+        <div class="pli-state">{{ item.state }}</div>
+      </div>
+    }
+  </div>
+
+  <div class="category-group reveal">
+    <p class="category-title">Lift Irrigation &amp; Pipeline Projects</p>
+    @for (item of liftList; track $index) {
+      <div class="pli">
+        <div>
+          <div class="pli-title">{{ item.title }}</div>
+          <div class="pli-client">{{ item.client }}</div>
+        </div>
+        <div class="pli-state">{{ item.state }}</div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- ══ FOOTER MINI ══ -->
+<footer class="footer-mini" role="contentinfo">
+  <p>© 2025 Scale Engineers · B-503, Swati Trinity, Applewood Township, Ahmedabad – 380058 · <a href="tel:+918980008332" style="color:inherit">+91 89800 08332</a> · <a href="tel:+912717457217" style="color:inherit">+91 2717 457217</a></p>
+  <p class="footer-tagline">Engineering Water for a Better World</p>
+</footer>

@@ -1,0 +1,35 @@
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav" [class.open]="mobileOpen" role="dialog" aria-modal="true">
+  <button class="mobile-close" (click)="closeMobile()" aria-label="Close menu">✕</button>
+  <a (click)="goHome()">Home</a>
+  <a (click)="goHome('services')">Services</a>
+  <a (click)="goProjects()">Projects</a>
+  <a (click)="goProducts()">Products</a>
+  <a (click)="goHome('about')">About</a>
+  <a (click)="goHome('contact')">Contact</a>
+</div>
+
+<!-- NAV BAR -->
+<nav [class.scrolled]="isScrolled" role="navigation" aria-label="Main Navigation">
+  <a (click)="goHome()" class="nav-logo" aria-label="Scale Engineers Home">
+    <div class="logo-img-container">
+      <img src="assets/logo.png" alt="Scale Engineers - Water Treatment Plant Consultancy" width="120" height="36" loading="eager">
+    </div>
+    <span class="logo-tagline">Est. 2015 · Ahmedabad</span>
+  </a>
+
+  <ul class="nav-links" role="list">
+    <li><a (click)="goHome()" [class.active]="isActive('/')">Home</a></li>
+    <li><a (click)="goHome('services')">Services</a></li>
+    <li><a (click)="goProjects()" [class.active]="isActive('/projects')">Projects</a></li>
+    <li><a (click)="goProducts()" [class.active]="isActive('/products')">Products</a></li>
+    <li><a (click)="goHome('about')">About</a></li>
+    <li><a (click)="goHome('contact')">Contact</a></li>
+  </ul>
+
+  <a (click)="goHome('contact')" class="nav-cta">Get Consultation</a>
+
+  <button class="hamburger" (click)="openMobile()" aria-label="Open menu" [attr.aria-expanded]="mobileOpen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
